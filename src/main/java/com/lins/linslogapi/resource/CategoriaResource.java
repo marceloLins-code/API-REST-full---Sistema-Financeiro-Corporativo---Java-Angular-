@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,16 +32,14 @@ public class CategoriaResource {
 	// @Autowired
 	private CategoriaRepository categoriaRepository;
 
+	@CrossOrigin(maxAge = 10, origins = {"http://localhost:8000"})
 	@GetMapping
 	public ResponseEntity<?> listar() {
 		List<Categoria> categorias = categoriaRepository.findAll();
 		return !categorias.isEmpty() ? ResponseEntity.ok(categorias) : ResponseEntity.ok().build();
 	}
 
-	// @GetMapping
-	// public List<Categoria> listar() {
-	// return categoriaRepository.findAll();
-	// }
+	
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)

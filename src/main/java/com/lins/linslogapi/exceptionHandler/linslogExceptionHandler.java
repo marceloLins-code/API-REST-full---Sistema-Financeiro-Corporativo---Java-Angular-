@@ -85,10 +85,7 @@ public class linslogExceptionHandler extends ResponseEntityExceptionHandler {
 			this.mensagemDesenvolvedor = mensagemDesenvolvedor;
 		}
 
-		public Erro(String mensagemUsuario2, Throwable mensagemDesenvolvedor2) {
-			// TODO Auto-generated constructor stub
-		}
-
+		
 		public String getMensagemUsuario() {
 			return mensagemUsuario;
 		}

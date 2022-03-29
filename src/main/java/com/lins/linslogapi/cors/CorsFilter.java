@@ -22,6 +22,7 @@ import com.lins.linslogapi.cinfig.LinsApiProperty;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class CorsFilter implements Filter {
 	
+	//***
 	@Autowired
 	private LinsApiProperty linsApiProperty;
 
